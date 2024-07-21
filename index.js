@@ -31,8 +31,7 @@ app.get("/api/:date?", function(req, res) {
     });
   } else {
     // empty parameter
-    if (! dateString) {
-      console.log('empty parameter');
+    if (typeof(dateString) === 'undefined') {
       res.json({
         "unix": new Date().getTime(),
         "utc": new Date().toUTCString()
